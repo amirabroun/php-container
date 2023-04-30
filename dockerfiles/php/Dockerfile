@@ -1,11 +1,13 @@
-FROM php
+FROM php:8.1-fpm
 
 RUN apt-get update --fix-missing && apt-get install -y curl wget zip unzip git g++ nano \
     libpng-dev \
     libonig-dev \
     libxml2-dev \
     libzip-dev \
-    libldap2-dev
+    libldap2-dev 
+
+RUN apt-get install -y npm 
 
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
