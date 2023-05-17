@@ -3,7 +3,7 @@ services:
 
     nginx:
         container_name: "${APP_TITLE}"
-        build: ./docker/nginx
+        build: ./dockerfiles/nginx
         links:
             - php
         ports:
@@ -13,7 +13,7 @@ services:
 
     php:
         container_name: "${APP_NAME}"
-        build: ./docker/php
+        build: ./dockerfiles/php
         volumes:
             - ./:/usr/share/nginx/www
 
